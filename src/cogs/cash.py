@@ -138,6 +138,36 @@ class Cash(commands.Cog):
             cash[str(ctx.author.id)]["cash"] = 1000
         await ctx.send(embed=nextcord.Embed(title=f'{ctx.author.name}\'s balance', description=f'{cash[str(ctx.author.id)]["cash"]}', color=nextcord.Color.green()))
         await self.finalize(cash)
+    
+    @commands.command()
+    async def weekly(self,ctx):
+        cash = await self.initialize()
+        if str(ctx.author.id) not in list(cash):
+            cash[str(ctx.author.id)] = {}
+        try:
+            if cash[str(ctx.author.id)]["time"]['week']+604800 > time.time():
+                return await ctx.send(embed=nextcord.Embed(title='Error', description='You already claimed your daily.', color=nextcord.Color.red()))
+            cash[str(ctx.author.id)]["cash"] += 1000
+            cash[str(ctx.author.id)]["time"]["week"] = time.time()
+        except KeyError:
+            cash[str(ctx.author.id)]["cash"] = 1000
+        await ctx.send(embed=nextcord.Embed(title=f'{ctx.author.name}\'s balance', description=f'{cash[str(ctx.author.id)]["cash"]}', color=nextcord.Color.green()))
+        await self.finalize(cash)
+    
+    @commands.command()
+    async def monthly(self,ctx):
+        cash = await self.initialize()
+        if str(ctx.author.id) not in list(cash):
+            cash[str(ctx.author.id)] = {}
+        try:
+            if cash[str(ctx.author.id)]["time"]['month']+2629743.83 > time.time():
+                return await ctx.send(embed=nextcord.Embed(title='Error', description='You already claimed your daily.', color=nextcord.Color.red()))
+            cash[str(ctx.author.id)]["cash"] += 1000
+            cash[str(ctx.author.id)]["time"]["month"] = time.time()
+        except KeyError:
+            cash[str(ctx.author.id)]["cash"] = 1000
+        await ctx.send(embed=nextcord.Embed(title=f'{ctx.author.name}\'s balance', description=f'{cash[str(ctx.author.id)]["cash"]}', color=nextcord.Color.green()))
+        await self.finalize(cash)
 
 def setup(bot):
     bot.add_cog(Cash(bot))
