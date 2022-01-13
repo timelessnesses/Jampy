@@ -1,9 +1,22 @@
-import discord
-from discord.ext import commands
-from utility import slash_util as slash
+from nextcord.ext import commands
+import nextcord
+import os
+import keep_alive
+from keep_alive import keep_alive
 
-bot = slash.Bot("j!",intents=discord.Intents().all()) 
+bot = commands.Bot("j!",intents=nextcord.Intents().all()) 
+
 
 @bot.event
 async def on_ready():
-    print("Bot started")
+	await bot.change_presence(activity=nextcord.Activity(type=nextcord.ActivityType.watching, name="My Tools"))
+	print("Bot started")
+
+
+
+for file in os.listdir("src/cogs"):
+    if file.endswith(".py"):
+        bot.load_extension("src.cogs."+file[:-3])
+
+keep_alive()
+bot.run(os.getenv("TOKEN"))

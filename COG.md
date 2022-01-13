@@ -34,8 +34,8 @@ TypeError: b() takes 0 positional arguments but 1 was given
 - This is code template that you can use  
 Normal:
 ```py
-import discord
-from discord.ext import commands
+import nextcord
+from .ext import commands
 
 class ClassName(commands.Cog):
 
@@ -54,36 +54,11 @@ class ClassName(commands.Cog):
 def setup(bot): # or client
     bot.add_cog(ClassName(bot))
 ```
-Slash command (Works everytime) (Works with discord.py github repo package only)
-```py
-from utility import slash_util as slash
-import discord
-
-class ClassName(slash.ApplicationCog):
-    def __init__(self,bot): # or client
-        self.bot = bot # or client
-        # do stuff when class initialized
-    
-    # you can't do event listener like on_message here
-
-    @slash.slash_command()
-    @slash.describe(args="argument documentation (not required)") # you shouldn't add this if your command don't have any args
-    async def command_name(self,ctx:slash.Context,args:type): # You need to specify type of argument like [str,int,slash.Range(min , max) for range the number] and you can set it to be optional by pass it a default value
-        # do stuff
-    
-
-def setup(bot): # or client
-    bot.add_cog(ClassName(bot)) # or client
-```
-Slash Limitation
-- ctx.message will be `None` so you can do anything with message stuff. (Except you send the message)
-- more? (Report me in DM if you found some error that has `NoneType` in it)
-
 ## Example
 Normal Cog
 ```py
-import discord
-from discord.ext import commands
+import nextcord
+from nextcord.ext import commands
 
 class Ping_Pong(commands.Cog):
     def __init__(self,bot):
@@ -105,23 +80,6 @@ class Ping_Pong(commands.Cog):
     
 def setup(bot):
     bot.add_cog(Ping_Pong(bot))
-```
-Slash command
-```py
-from utility import slash_util as slash
-import discord
-
-class Ping_Pong_Slash(slash.ApplicationCog):
-    def __init__(self,bot):
-        self.bot = bot
-    
-    @slash.command()
-    @slash.describe(member="hi to member")
-    async def (self,ctx:slash.Context,member:discord.Member,message:str="hi {}"):
-        await ctx.send(message.format(member.mention))
-    
-def setup(bot):
-    bot.add_cog(Ping_Pong_Slash(bot))
 ```
 that's it.  
 DM me if there's the problem
