@@ -11,8 +11,9 @@ class Info(commands.Cog):
 async def help(self, ctx):
 		embed=nextcord.Embed(
 			title="Bot Commands:",
-			description="",
+			description="The commands followed are the commands that is built into the Jampy bot",
 		)
+		embed.add_field(name="Credits", value="See all the people who helped make this bot", inline=True)
 
 
 
