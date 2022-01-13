@@ -23,7 +23,7 @@ class EventListener(commands.Cog):
             return await ctx.send(embed=nextcord.Embed(title='Error', description='You are on cooldown.', color=nextcord.Color.red()))
         elif isinstance(error, commands.CommandInvokeError):
             return await ctx.send(embed=nextcord.Embed(title='Error', description='An error occured.', color=nextcord.Color.red()))
-        elif isinstance(error, ValueError):
-            return await ctx.send(embed=nextcord.Embed(title='Error', description='The ', color=nextcord.Color.red()))
         else:
             return await ctx.send(embed=nextcord.Embed(title='Error', description=f'{type(error).__name__} - {error}', color=nextcord.Color.red()))
+
+def setup()

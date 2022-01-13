@@ -19,8 +19,8 @@ class Cash(commands.Cog):
             db -- Dictionary to dump to file
         Return: None
         """
-        with open('src/cogs/db/db.json') as f:
-            json.dump(db,f)
+        with open('src/cogs/db/db.json','w') as f:
+            json.dump(db,f,indent=4)
 
     async def initialize(self):
         """Initializes the database
@@ -36,7 +36,7 @@ class Cash(commands.Cog):
         print("Cash is loaded.")
     
     @commands.command(aliases=['bal'])
-    async def balance(self, ctx, user: discord.Member = None):
+    async def balance(self, ctx, user: nextcord.Member = None):
         cash = await self.initialize()
         if user is None:
             user = ctx.author
@@ -108,7 +108,7 @@ class Cash(commands.Cog):
         await self.finalize(cash)
     
     @commands.command()
-    async def give(self,ctx,user: discord.Member,amount: int):
+    async def give(self,ctx,user: nextcord.Member,amount: int):
         cash = await self.initialize()
         if str(ctx.author.id) not in list(cash):
             cash[str(ctx.author.id)] = {}
@@ -116,7 +116,11 @@ class Cash(commands.Cog):
             cash[str(user.id)]["cash"] += amount
             cash[str(ctx.author.id)]["cash"] -= amount
         except KeyError:
-            cash[str(user.id)]["cash"] = amount
+            cash[str(user.id)] = {}
+            cash[str(user.id)]["cash"] = 0
+            cash[str(user.id)]["cash"] += amount
+            cash[str(ctx.author.id)]["cash"] -= amount
+            print(cash)
         await ctx.send(embed=nextcord.Embed(title=f'{ctx.author.name}\'s balance', description=f'{cash[str(ctx.author.id)]["cash"]}', color=nextcord.Color.green()))
         await self.finalize(cash)
     
@@ -126,10 +130,10 @@ class Cash(commands.Cog):
         if str(ctx.author.id) not in list(cash):
             cash[str(ctx.author.id)] = {}
         try:
-            if cash[str(ctx.author.id)]["time"]+86400 > time.time():
+            if cash[str(ctx.author.id)]["time"]['day']+86400 > time.time():
                 return await ctx.send(embed=nextcord.Embed(title='Error', description='You already claimed your daily.', color=nextcord.Color.red()))
             cash[str(ctx.author.id)]["cash"] += 1000
-            cash[str(ctx.author.id)]["time"] = time.time()
+            cash[str(ctx.author.id)]["time"]["day"] = time.time()
         except KeyError:
             cash[str(ctx.author.id)]["cash"] = 1000
         await ctx.send(embed=nextcord.Embed(title=f'{ctx.author.name}\'s balance', description=f'{cash[str(ctx.author.id)]["cash"]}', color=nextcord.Color.green()))
