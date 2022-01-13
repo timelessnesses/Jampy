@@ -14,7 +14,7 @@ class MoneyManagement(commands.Cog):
 			db = json.load(fp)
 		if str(ctx.author.id) not in db:
 			db[str(ctx.author.id)] = {"money":0,"bank":0,"daily":0,"weekly":0,"monthly":0}
-		if db[str(ctx.author.id)]["daily"]+86400 < time.time():
+		if db[str(ctx.author.id)]["daily"]+86400 > time.time():
 			return await ctx.send("You have already claimed your daily money")
 		db[str(ctx.author.id)]["money"] += 5000
 		db[str(ctx.author.id)]["daily"] = time.time()
@@ -29,7 +29,7 @@ class MoneyManagement(commands.Cog):
 			db = json.load(fp)
 		if str(ctx.author.id) not in db:
 			db[str(ctx.author.id)] = {"money":0,"bank":0,"daily":0,"weekly":0,"monthly":0}
-		if db[str(ctx.author.id)]["weekly"]+604800 < time.time():
+		if db[str(ctx.author.id)]["weekly"]+604800 > time.time():
 			return await ctx.send("You have already claimed your weekly money")
 		db[str(ctx.author.id)]["money"] += 1000000
 		db[str(ctx.author.id)]["weekly"] = time.time()
@@ -44,7 +44,7 @@ class MoneyManagement(commands.Cog):
 			db = json.load(fp)
 		if str(ctx.author.id) not in db:
 			db[str(ctx.author.id)] = {"money":0,"bank":0,"daily":0,"weekly":0,"monthly":0}
-		if db[str(ctx.author.id)]["monthly"]+2592000 < time.time():
+		if db[str(ctx.author.id)]["monthly"]+2592000 > time.time():
 			return await ctx.send("You have already claimed your monthly money")
 		db[str(ctx.author.id)]["money"] += 1000000000
 		db[str(ctx.author.id)]["monthly"] = time.time()

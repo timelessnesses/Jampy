@@ -12,18 +12,25 @@ class Bank(commands.Cog):
     async def bal(self,ctx,member:nextcord.Member=None):
         if member is None:
             member = ctx.author
-        db = json.loads(await open("src/data/bank.json"))
-
-        await ctx.send(embed=nextcord.Embed(title=f"{member.name}'s balance.",description=f"Wallet:  {db[str(member.id)]['money']} $"))
+        db = json.load(open("src/data/bank.json"))
+        try:
+            await ctx.send(embed=nextcord.Embed(title=f"{member.name}'s balance.",description=f"Wallet:  `{db[str(member.id)]['money']} bitties`\nBank: `{db[str(member.id)]['bank']} bitties`"))
+        except KeyError:
+            await ctx.send(embed=nextcord.Embed(title=f"{member.name}'s balance.",description=f"Wallet:  `{0} bitties`\nBank: `{0} bitties`"))
 
     @commands.command(aliases=["deposit","add","d"])
     async def dep(self,ctx,amount:str=""):
         if amount == "":
             return await ctx.send("Please specify an amount")
-        db = json.loads(await open("src/data/bank.json"))
+        db = json.load(open("src/data/bank.json"))
+        
+        
         if str(ctx.author.id) not in db:
             db[str(ctx.author.id)] = {"money":0,"bank":0,"daily":0,"weekly":0,"monthly":0}
+        if amount in ["max","all"]:
+            amount = db[str(ctx.author.id)]["money"]
         db[str(ctx.author.id)]["bank"] += int(amount)
+        db[str(ctx.author.id)]["money"] -= int(amount)
         with open("src/data/bank.json","w") as fp:
             json.dump(db,fp)
         await ctx.send(f"You have deposited {amount} $")
@@ -32,7 +39,9 @@ class Bank(commands.Cog):
     async def wd(self,ctx,amount:str=""):
         if amount == "":
             return await ctx.send("Please specify an amount")
-        db = json.loads(await open("src/data/bank.json"))
+        db = json.load(open("src/data/bank.json"))
+        if amount in ["max","all"]:
+            amount = db[str(ctx.author.id)]["bank"]
         if str(ctx.author.id) not in db:
             db[str(ctx.author.id)] = {"money":0,"bank":0,"daily":0,"weekly":0,"monthly":0}
         if db[str(ctx.author.id)]["bank"] < int(amount):

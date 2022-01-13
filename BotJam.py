@@ -5,7 +5,7 @@ from nextcord.ext import commands
 import nextcord
 import os
 import keep_alive
-# from keep_alive import keep_alive
+from keep_alive import keep_alive
 
 
 bot = commands.Bot("j!",intents=nextcord.Intents().all()) 
@@ -22,6 +22,5 @@ for file in os.listdir("src/cogs"):
     if file.endswith(".py"):
         bot.load_extension("src.cogs."+file[:-3])
 
-# keep_alive()
-print(os.getenv("TOKEN"))
+keep_alive()
 bot.run(os.environ["TOKEN"])
