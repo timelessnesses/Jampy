@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\cogs",
+    "\\src\\cogs\\db"
   ],
-  "SelectedNode": "\\BotJam.py",
+  "SelectedNode": "\\src\\cogs\\shops.py",
   "PreviewInSolutionExplorer": false
 }

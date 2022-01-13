@@ -63,52 +63,6 @@ class Cash(commands.Cog):
         )
         await self.finalize(cash)
 
-    @commands.command(aliases=["dep"])
-    async def deposit(self, ctx, amount: int):
-        cash = await self.initialize()
-        if cash[str(ctx.author.id)]["cash"] < amount:
-            return await ctx.send(
-                embed=nextcord.Embed(
-                    title="Error",
-                    description="You do not have enough cash to do this.",
-                    color=nextcord.Color.red(),
-                )
-            )
-        if str(ctx.author.id) not in list(cash):
-            cash[str(ctx.author.id)] = {}
-        try:
-            cash[str(ctx.author.id)]["bank"] += amount
-            cash[str(ctx.author.id)]["cash"] -= amount
-        except KeyError:
-            cash[str(ctx.author.id)]["bank"] = amount
-        await ctx.send(
-            embed=nextcord.Embed(
-                title=f"{ctx.author.name}'s balance",
-                description=f'{cash[str(ctx.author.id)]["cash"]}',
-                color=nextcord.Color.green(),
-            )
-        )
-        await self.finalize(cash)
-
-    @commands.command(aliases=["with"])
-    async def withdraw(self, ctx, amount: int):
-        cash = await self.initialize()
-        if str(ctx.author.id) not in list(cash):
-            cash[str(ctx.author.id)] = {}
-        try:
-            cash[str(ctx.author.id)]["cash"] += amount
-            cash[str(ctx.author.id)]["bank"] -= amount
-        except KeyError:
-            cash[str(ctx.author.id)]["cash"] = amount
-        await ctx.send(
-            embed=nextcord.Embed(
-                title=f"{ctx.author.name}'s balance",
-                description=f'{cash[str(ctx.author.id)]["cash"]}',
-                color=nextcord.Color.green(),
-            )
-        )
-        await self.finalize(cash)
-
     @commands.command(aliases=["set"])
     @check()
     async def setbalance(self, ctx, amount: int):
@@ -123,25 +77,6 @@ class Cash(commands.Cog):
             embed=nextcord.Embed(
                 title=f"{ctx.author.name}'s balance",
                 description=f'{cash[str(ctx.author.id)]["cash"]}',
-                color=nextcord.Color.green(),
-            )
-        )
-        await self.finalize(cash)
-
-    @commands.command(aliases=["setb"])
-    @check()
-    async def setbank(self, ctx, amount: int):
-        cash = await self.initialize()
-        if str(ctx.author.id) not in list(cash):
-            cash[str(ctx.author.id)] = {}
-        try:
-            cash[str(ctx.author.id)]["bank"] = amount
-        except KeyError:
-            cash[str(ctx.author.id)]["bank"] = amount
-        await ctx.send(
-            embed=nextcord.Embed(
-                title=f"{ctx.author.name}'s balance",
-                description=f'{cash[str(ctx.author.id)]["bank"]}',
                 color=nextcord.Color.green(),
             )
         )
