@@ -3,7 +3,4 @@ run:
 beauty:
 	isort .
 	black .
-	flake8 . 
-	mypy .
-	pylint .
-	pydocstyle .
+	flake8 .  --exit-zero
