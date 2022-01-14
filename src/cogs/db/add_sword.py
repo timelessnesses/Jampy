@@ -5,7 +5,7 @@ questions = [
 	"How it cost?",
 	"How much damage it dealt?",
 	"How rare it is? (Common, Default, Rare)",
-	"What material it made of? (Iron, Steel, Diamond, Gold, Stone, Wood, Leather, Bone) (Split every material with a comma)",
+	"What material it made of? (Iron, Diamond, Gold, Stone, Wood, Leather, Bone) (Split every material with a comma)",
 ]
 
 answer = []

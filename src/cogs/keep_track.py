@@ -18,6 +18,8 @@ class DBUpdater(commands.Cog):
                 "bank": 0,
                 "time": {"day": 0, "week": 0, "month": 0, "year": 0},
                 "materials": {"iron": 0, "gold": 0, "diamond": 0, "stone": 0,"wood": 0, "leather": 0, "bone": 0},
+                "swords": {},
+                "using": ""
             }
             with open("src/cogs/db/db.json", "w") as fp:
                 json.dump(db, fp, indent=4)
