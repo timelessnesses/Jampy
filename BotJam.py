@@ -24,5 +24,5 @@ for file in os.listdir("src/cogs"):
     if file.endswith(".py"):
         bot.load_extension("src.cogs." + file[:-3])
 
-keep_alive()
+keep_alive()# wait i can reload cogs? yes?
 bot.run(os.environ["TOKEN"])

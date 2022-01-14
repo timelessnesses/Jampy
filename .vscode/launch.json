@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        
+        {
+            "name": "Python: Run the bot.",
+            "type": "python",
+            "request": "launch",
+            "program": "f:/Desktop/Jampy/BotJam.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}

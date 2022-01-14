@@ -41,6 +41,12 @@ class Cash(commands.Cog):
 
     @commands.command(aliases=["bal"])
     async def balance(self, ctx, user: nextcord.Member = None):
+
+        """
+        Shows the balance of the user.
+        If no user is specified, shows the balance of the author.
+        """
+
         cash = await self.initialize()
         if user is None:
             user = ctx.author
@@ -66,6 +72,9 @@ class Cash(commands.Cog):
     @commands.command(aliases=["set"])
     @check()
     async def setbalance(self, ctx, amount: int):
+        """
+        Sets the balance of the author.
+        """
         cash = await self.initialize()
         if str(ctx.author.id) not in list(cash):
             cash[str(ctx.author.id)] = {}
@@ -84,6 +93,9 @@ class Cash(commands.Cog):
 
     @commands.command()
     async def give(self, ctx, user: nextcord.Member, amount: int):
+        """
+        Gives the user the specified amount of cash.
+        """
         cash = await self.initialize()
         if str(ctx.author.id) not in list(cash):
             cash[str(ctx.author.id)] = {}
@@ -107,6 +119,9 @@ class Cash(commands.Cog):
 
     @commands.command()
     async def daily(self, ctx):
+        """
+        Gives the user a daily reward.
+        """
         cash = await self.initialize()
         if str(ctx.author.id) not in list(cash):
             cash[str(ctx.author.id)] = {}
@@ -134,6 +149,9 @@ class Cash(commands.Cog):
 
     @commands.command()
     async def weekly(self, ctx):
+        """
+        Gives the user a weekly reward.
+        """
         cash = await self.initialize()
         if str(ctx.author.id) not in list(cash):
             cash[str(ctx.author.id)] = {}
@@ -161,6 +179,10 @@ class Cash(commands.Cog):
 
     @commands.command()
     async def monthly(self, ctx):
+        """
+        Gives the user a monthly reward.
+        """
+        
         cash = await self.initialize()
         if str(ctx.author.id) not in list(cash):
             cash[str(ctx.author.id)] = {}
