@@ -9,6 +9,7 @@ class Help(commands.Cog):
     @commands.command(name='help')
     async def help(self, ctx, command: str = None):
         """Shows help about a command or the bot"""
+        print(command)
         if command is None:
             embed = nextcord.Embed(title='Help', description='', color=nextcord.Color.blue())
             for command in self.bot.commands:
