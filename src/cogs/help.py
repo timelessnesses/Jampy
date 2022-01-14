@@ -7,7 +7,7 @@ class Help(commands.Cog):
         self.bot.remove_command('help')
 
     @commands.command(name='help')
-    async def help(self, ctx, *, command: str = None):
+    async def help(self, ctx, command: str = None):
         """Shows help about a command or the bot"""
         if command is None:
             embed = nextcord.Embed(title='Help', description='', color=nextcord.Color.blue())
