@@ -1,5 +1,14 @@
 {
-  "swords": [
-
-  ]
+    "swords": [
+        {
+            "name": "wooden sword",
+            "cost": "20",
+            "damage": "5",
+            "rareness": "Common",
+            "material": [
+                "Wood",
+                "Leather"
+            ]
+        }
+    ]
 }
