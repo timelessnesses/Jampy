@@ -23,8 +23,11 @@ class BlackSmith(commands.Cog):
             json.dump(db,fp)
     @commands.command()
     async def swords(self,ctx):
+        """
+        Shows all swords
+        """
         db = await self.initialize()
-        embed = nextcord.Embed(title="Here's the list of the swords!")
+        embed = nextcord.Embed(title="Here's the list of the swords!",color=0xffaa00)
         for sword in db["swords"]:
             embed.add_field(name="Sword Name",value=sword["name"],inline=False)
             embed.add_field(name="Cost to make",value=sword["cost"]+"$",inline=False)
@@ -36,17 +39,20 @@ class BlackSmith(commands.Cog):
     
     @commands.command()
     async def make(self,ctx,*,sword_name):
+        """
+        Makes a sword
+        """
         db = await self.initialize()
         user = await self.initialize_user()
         if sword_name.lower() not in db["swords"]:
             await ctx.send("That sword doesn't exist!")
-        embed = nextcord.Embed(title="You want to make a sword called: "+sword_name,description="Are you sure you want to make this sword? Please check the requirement below.")
+        embed = nextcord.Embed(title="You want to make a sword called: "+sword_name,description="Are you sure you want to make this sword? Please check the requirement below.",color=0xffaa00)
         embed.add_field(name="Cost to make",value=db["swords"][sword_name]["cost"],inline=False)
         embed.add_field(name="Damage",value=db["swords"][sword_name]["damage"],inline=False)
         embed.add_field(name="Rareness",value=db["swords"][sword_name]["rareness"],inline=False)
         embed.add_field(name="Needed Material",value='\n'.join(db["swords"][sword_name]["material"],inline=False))
         require = await ctx.send(embed=embed)
-        another = nextcord.Embed(title="Here's what you have.")
+        another = nextcord.Embed(title="Here's what you have.",color=0xffaa00)
         another.add_field(name="Money",value=user[str(ctx.author.id)]["money"],inline=False)
         another.add_field(name="Iron",value=user[str(ctx.author.id)]["materials"]["iron"],inline=False)
         another.add_field(name="Gold",value=user[str(ctx.author.id)]["materials"]["gold"],inline=False)

@@ -7,6 +7,9 @@ class Credit(commands.Cog):
     
     @commands.command(name='credit')
     async def credit(self, ctx):
+        """
+        Shows the bot's credit.
+        """
         embed=nextcord.Embed(
             title="Information about Jampy",
             description="This bot is a black-smithing bot made for TasosIsDev's 4th BotJam\n\n**Important notice: This bot is not a moderation-based bot, as it was made for thr bot Jam with the team: Blacksmith**",
