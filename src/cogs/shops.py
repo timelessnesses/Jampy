@@ -127,7 +127,7 @@ class BlackSmith(commands.Cog):
                 if len(materials) == len(db["swords"][sword_name]["material"]):
                     user[str(ctx.author.id)]["swords"][sword_name] = db["swords"][sword_name]
                     await ctx.send("You have made a {}!".format(sword_name))
-            else: # check jampy repl
+            else:
                 await ctx.send("You don't have enough money!")
                 return
                         
