@@ -15,9 +15,9 @@ class Help(commands.Cog):
                 continue
             if command.aliases:
                 aliases = ' | '.join(command.aliases)
-                embed.add_field(name=f'{command.name} | {aliases}', value=command.help, inline=true)
+                embed.add_field(name=f'{command.name} | {aliases}', value=command.help, inline=True)
             else:
-                embed.add_field(name=command.name, value=command.help, inline=true)
+                embed.add_field(name=command.name, value=command.help, inline=True)
 
 def setup(bot):
     bot.add_cog(Help(bot))
