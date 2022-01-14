@@ -132,3 +132,5 @@ class BlackSmith(commands.Cog):
                 return
                         
     
+def setup(bot):
+    bot.add_cog(BlackSmith(bot))
