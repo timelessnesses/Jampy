@@ -40,10 +40,15 @@ class Resources(commands.Cog):
     @commands.command()
     async def cut_wood(self, ctx):
         db = await self.initialize()
-        a = await ctx.send(embed=nextcord.Embed(title="Destroying Nature Enviroment...", color=0xFFAA00))
+        a = await ctx.send(
+            embed=nextcord.Embed(
+                title="Destroying Nature Enviroment...", color=0xFFAA00
+            )
+        )
         await asyncio.sleep(5)
         b = nextcord.Embed(
-            title="After 5 hours non-stop of cutting trees. Here's what you got!", color=0xFFAA00
+            title="After 5 hours non-stop of cutting trees. Here's what you got!",
+            color=0xFFAA00,
         )
         v = random.randint(1, 20)
         db[str(ctx.author.id)]["materials"]["wood"] += v
