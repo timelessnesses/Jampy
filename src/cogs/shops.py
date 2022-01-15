@@ -61,9 +61,13 @@ class BlackSmith(commands.Cog):
         """
         db = await self.initialize()
         user = await self.initialize_user()
-        if sword_name.lower() not in list(db["swords"]):
-            await ctx.send("That sword doesn't exist!")
-            return
+        for sword in db["swords"]:
+            if sword["name"] == sword_name:
+                break
+            else:
+                sword = None
+        if sword is None:
+               return await ctx.send("That sword doesn't exist!")
         embed = nextcord.Embed(
             title="You want to make a sword called: " + sword_name,
             description="Are you sure you want to make this sword? Please check the requirement below.",
