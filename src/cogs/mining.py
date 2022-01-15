@@ -1,6 +1,7 @@
 import asyncio
-import random
 import json
+import random
+
 import nextcord
 from nextcord.ext import commands
 
@@ -77,6 +78,7 @@ class Resources(commands.Cog):
         b.add_field(name="Bone", value=v, inline=False)
         await a.edit(embed=b)
         await self.finalize(db)
+
 
 def setup(bot):
     bot.add_cog(Resources(bot))
