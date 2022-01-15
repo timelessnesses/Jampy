@@ -23,5 +23,5 @@ jobs:
     - name: send those file back pzlpzlpzlpzlz
       uses: EndBug/add-and-commit@v7.5.0
       with:
-        message: "beautified and linted code you stupid nerd\nCo-authored-by: Snaky4life <Snaky4life@users.noreply.github.com>"
-        author_name: "timelessnesses"
+        message: "beautified and linted code you stupid nerd"
+        author_name: "Code beautifier and Code linter"
