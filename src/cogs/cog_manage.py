@@ -68,6 +68,8 @@ class CogsManagement(commands.Cog):
         for cog in os.listdir("./src/cogs"):
             if cog == "cogs_management.py":
                 continue
+            if ".py" not in cog:
+                continue
             try:
                 self.bot.unload_extension("src.cogs." + cog[:-3])
                 self.bot.load_extension("src.cogs." + cog[:-3])
