@@ -1,6 +1,6 @@
 import json
 import time
-
+import asyncio
 import nextcord
 from nextcord.ext import commands
 
@@ -27,6 +27,7 @@ class Cash(commands.Cog):
             json.dump(db, f, indent=4)
 
     async def initialize(self):
+        await asyncio.sleep(1)
         """Initializes the database
 
         Return: Dictionary

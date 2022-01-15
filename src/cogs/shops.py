@@ -1,7 +1,6 @@
 import asyncio
 import json
 
-import dta  # upm package(dta)
 import nextcord
 from nextcord.ext import commands
 
@@ -11,11 +10,13 @@ class BlackSmith(commands.Cog):
         self.bot = bot
 
     async def initialize(self):
+        await asyncio.sleep(1)
         with open("src/cogs/db/blacksmith.json") as fp:
             db = json.load(fp)
         return db
 
     async def initialize_user(self):
+        await asyncio.sleep(1)
         with open("src/cogs/db/db.json") as fp:
             db = json.load(fp)
         return db
