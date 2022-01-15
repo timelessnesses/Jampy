@@ -44,7 +44,8 @@ class BlackSmith(commands.Cog):
             embed.add_field(name="Damage", value=sword["damage"], inline=False)
             embed.add_field(name="Rareness", value=sword["rareness"], inline=False)
             embed.add_field(
-                name="Needed Material", value="\n".join(sword["material"], inline=False)
+                name="Needed Material", value="\n".join(sword["material"]),
+                inline=False
             )
         embed.add_field(
             name="To make a sword, use the command:",
@@ -68,7 +69,7 @@ class BlackSmith(commands.Cog):
             color=0xFFAA00,
         )
         embed.add_field(
-            name="Cost to make", value=db["swords"][sword_name]["cost"], inline=False
+            name="Cost to make", value=db["swords"][db["swords"].index(sword_name)]["cost"], inline=False
         )
         embed.add_field(
             name="Damage", value=db["swords"][sword_name]["damage"], inline=False

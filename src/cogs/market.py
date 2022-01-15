@@ -20,8 +20,8 @@ class Selling(commands.Cog):
     @commands.command()
     async def sell(self, ctx, item, amount):
         db = await self.initialize()
-        if db[str(ctx.author.id)]["material"][item.lower()] >= amount:
-            db[str(ctx.author.id)]["material"][item.lower()] -= amount
+        if db[str(ctx.author.id)]["materials"][item.lower()] >= amount:
+            db[str(ctx.author.id)]["materials"][item.lower()] -= amount
             db[str(ctx.author.id)]["money"] += amount
             await ctx.send(
                 embed=nextcord.Embed(
