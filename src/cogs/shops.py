@@ -44,7 +44,8 @@ class BlackSmith(commands.Cog):
             embed.add_field(name="Damage", value=sword["damage"], inline=False)
             embed.add_field(name="Rareness", value=sword["rareness"], inline=False)
             embed.add_field(
-                name="Needed Material", value="\n".join(sword["material"]), inline=False
+                name="Needed Material", value="\n".join(sword["material"]),
+                inline=False
             )
         embed.add_field(
             name="To make a sword, use the command:",
@@ -60,17 +61,16 @@ class BlackSmith(commands.Cog):
         """
         db = await self.initialize()
         user = await self.initialize_user()
-        if sword_name.lower() not in db["swords"]:
+        if sword_name.lower() not in list(db["swords"]):
             await ctx.send("That sword doesn't exist!")
+            return
         embed = nextcord.Embed(
             title="You want to make a sword called: " + sword_name,
             description="Are you sure you want to make this sword? Please check the requirement below.",
             color=0xFFAA00,
         )
         embed.add_field(
-            name="Cost to make",
-            value=db["swords"][db["swords"].index(sword_name)]["cost"],
-            inline=False,
+            name="Cost to make", value=db["swords"][db["swords"].index(sword_name)]["cost"], inline=False
         )
         embed.add_field(
             name="Damage", value=db["swords"][sword_name]["damage"], inline=False
