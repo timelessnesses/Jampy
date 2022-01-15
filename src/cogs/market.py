@@ -1,7 +1,9 @@
+import asyncio
+import json
+
 import nextcord
 from nextcord.ext import commands
-import json
-import asyncio
+
 
 class Selling(commands.Cog):
     def __init__(self, bot):
@@ -36,6 +38,7 @@ class Selling(commands.Cog):
                 )
             )
         await self.finalize(db)
+
 
 def setup(bot):
     bot.add_cog(Selling(bot))
