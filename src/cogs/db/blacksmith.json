@@ -6,8 +6,8 @@
             "damage": "5",
             "rareness": "Common",
             "material": [
-                "Wood",
-                "Leather"
+                "wood",
+                "leather"
             ]
         }
     ]

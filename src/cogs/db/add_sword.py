@@ -16,13 +16,18 @@ for question in questions:
 with open("src/cogs/db/blacksmith.json") as fp:
     db = json.load(fp)
 
+b = []
+
+for material in answer[4].split(","):
+    b.append(material.strip().lower())
+
 db["swords"].append(
     {
         "name": answer[0].lower(),
         "cost": answer[1],
         "damage": answer[2],
         "rareness": answer[3],
-        "material": answer[4].split(","),
+        "material": b,
     }
 )
 
