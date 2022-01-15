@@ -54,16 +54,12 @@ class Cash(commands.Cog):
             cash[str(user.id)] = {}
         try:
             bal = cash[str(user.id)]["cash"]
-            ba = cash[str(user.id)]["bank"]
         except KeyError:
-            cash[str(user.id)]["cash"] = 0
-            bal = cash[str(user.id)]["cash"]
-            cash[str(user.id)]["bank"] = 0
-            ba = cash[str(user.id)]["bank"]
+            pass
         await ctx.send(
             embed=nextcord.Embed(
                 title=f"{user.name}'s balance",
-                description=f"Wallet: {bal}$\nBank: {ba}",
+                description=f"Wallet: {bal}$\n",
                 color=0xFFAA00,
             )
         )
