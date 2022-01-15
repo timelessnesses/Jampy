@@ -14,5 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
+    - name: install
+      run: pip install isort black flake8
+      
     - name: beauty
       run: make beauty
