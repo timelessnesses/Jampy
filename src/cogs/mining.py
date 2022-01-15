@@ -35,38 +35,44 @@ class Resources(commands.Cog):
             db[str(ctx.author.id)]["material"][az.lower()] += v
         await a.edit(embed=b)
         await self.finalize(db)
-    
+
     @commands.command()
-    async def cut_wood(self,ctx):
+    async def cut_wood(self, ctx):
         db = await self.initialize()
         a = await ctx.send(embed=discord.Embed(title="Hunting...", color=0xFFAA00))
         await asyncio.sleep(5)
-        b = discord.Embed(title="After 5 hours non-stop hunting. Here's what you got!", color=0xFFAA00)
-        v = random.randint(1,20)
+        b = discord.Embed(
+            title="After 5 hours non-stop hunting. Here's what you got!", color=0xFFAA00
+        )
+        v = random.randint(1, 20)
         db[str(ctx.author.id)]["material"]["wood"] += v
         b.add_field(name="Wood", value=v, inline=False)
         await a.edit(embed=b)
         await self.finalize(db)
-    
+
     @commands.command()
-    async def hunt_leather(self,ctx):
+    async def hunt_leather(self, ctx):
         db = await self.initialize()
         a = await ctx.send(embed=discord.Embed(title="Hunting...", color=0xFFAA00))
         await asyncio.sleep(5)
-        b = discord.Embed(title="After 5 hours non-stop hunting. Here's what you got!", color=0xFFAA00)
-        v = random.randint(1,20)
+        b = discord.Embed(
+            title="After 5 hours non-stop hunting. Here's what you got!", color=0xFFAA00
+        )
+        v = random.randint(1, 20)
         db[str(ctx.author.id)]["material"]["leather"] += v
         b.add_field(name="Leather", value=v, inline=False)
         await a.edit(embed=b)
         await self.finalize(db)
-    
+
     @commands.command()
-    async def hunt_bone(self,ctx):
+    async def hunt_bone(self, ctx):
         db = await self.initialize()
         a = await ctx.send(embed=discord.Embed(title="Hunting...", color=0xFFAA00))
         await asyncio.sleep(5)
-        b = discord.Embed(title="After 5 hours non-stop hunting. Here's what you got!", color=0xFFAA00)
-        v = random.randint(1,20)
+        b = discord.Embed(
+            title="After 5 hours non-stop hunting. Here's what you got!", color=0xFFAA00
+        )
+        v = random.randint(1, 20)
         db[str(ctx.author.id)]["material"]["bone"] += v
         b.add_field(name="Bone", value=v, inline=False)
         await a.edit(embed=b)
