@@ -64,7 +64,7 @@ class Cash(commands.Cog):
             embed=nextcord.Embed(
                 title=f"{user.name}'s balance",
                 description=f"Wallet: {bal}$\nBank: {ba}",
-                color=0xffaa00,
+                color=0xFFAA00,
             )
         )
         await self.finalize(cash)
@@ -86,7 +86,7 @@ class Cash(commands.Cog):
             embed=nextcord.Embed(
                 title=f"{ctx.author.name}'s balance",
                 description=f'{cash[str(ctx.author.id)]["cash"]}',
-                color=0xffaa00,
+                color=0xFFAA00,
             )
         )
         await self.finalize(cash)
@@ -112,7 +112,7 @@ class Cash(commands.Cog):
             embed=nextcord.Embed(
                 title=f"{ctx.author.name}'s balance",
                 description=f'{cash[str(ctx.author.id)]["cash"]}',
-                color=0xffaa00,
+                color=0xFFAA00,
             )
         )
         await self.finalize(cash)
@@ -131,7 +131,7 @@ class Cash(commands.Cog):
                     embed=nextcord.Embed(
                         title="Error",
                         description="You already claimed your daily.",
-                        color=0xffaa00,
+                        color=0xFFAA00,
                     )
                 )
             cash[str(ctx.author.id)]["cash"] += 1000
@@ -142,7 +142,7 @@ class Cash(commands.Cog):
             embed=nextcord.Embed(
                 title=f"{ctx.author.name}'s balance",
                 description=f'{cash[str(ctx.author.id)]["cash"]}',
-                color=0xffaa00,
+                color=0xFFAA00,
             )
         )
         await self.finalize(cash)
@@ -161,7 +161,7 @@ class Cash(commands.Cog):
                     embed=nextcord.Embed(
                         title="Error",
                         description="You already claimed your daily.",
-                        color=0xffaa00,
+                        color=0xFFAA00,
                     )
                 )
             cash[str(ctx.author.id)]["cash"] += 1000
@@ -172,7 +172,7 @@ class Cash(commands.Cog):
             embed=nextcord.Embed(
                 title=f"{ctx.author.name}'s balance",
                 description=f'{cash[str(ctx.author.id)]["cash"]}',
-                color=0xffaa00,
+                color=0xFFAA00,
             )
         )
         await self.finalize(cash)
@@ -182,7 +182,7 @@ class Cash(commands.Cog):
         """
         Gives the user a monthly reward.
         """
-        
+
         cash = await self.initialize()
         if str(ctx.author.id) not in list(cash):
             cash[str(ctx.author.id)] = {}
@@ -192,7 +192,7 @@ class Cash(commands.Cog):
                     embed=nextcord.Embed(
                         title="Error",
                         description="You already claimed your daily.",
-                        color=0xffaa00,
+                        color=0xFFAA00,
                     )
                 )
             cash[str(ctx.author.id)]["cash"] += 1000
@@ -203,7 +203,7 @@ class Cash(commands.Cog):
             embed=nextcord.Embed(
                 title=f"{ctx.author.name}'s balance",
                 description=f'{cash[str(ctx.author.id)]["cash"]}',
-                color=0xffaa00,
+                color=0xFFAA00,
             )
         )
         await self.finalize(cash)
