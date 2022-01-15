@@ -68,12 +68,9 @@ class CogsManagement(commands.Cog):
         for cog in os.listdir("./src/cogs"):
             if cog == "cogs_management.py":
                 continue
-            if not cog.endswith(".py"):
-                continue
-            cog = cog.strip(".py")
             try:
-                self.bot.unload_extension("src.cogs." + cog)
-                self.bot.load_extension("src.cogs." + cog)
+                self.bot.unload_extension("src.cogs." + cog[:-3])
+                self.bot.load_extension("src.cogs." + cog[:-3])
             except Exception as e:
                 await ctx.send(f"**`ERROR:`** {type(e).__name__} - {e}")
             else:
