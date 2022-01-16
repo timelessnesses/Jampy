@@ -1,6 +1,6 @@
 {
     "890913140278181909": {
-        "cash": 0,
+        "cash": 696969696969,
         "bank": 0,
         "time": {
             "day": 0,
@@ -9,13 +9,13 @@
             "year": 0
         },
         "materials": {
-            "iron": 0,
-            "gold": 0,
-            "diamond": 0,
-            "stone": 0,
+            "iron": 18,
+            "gold": 2,
+            "diamond": 54,
+            "stone": 1,
             "wood": 14,
             "leather": 0,
-            "bone": 0
+            "bone": 19
         },
         "swords": {},
         "using": ""
@@ -142,6 +142,111 @@
             "wood": 0,
             "leather": 0,
             "bone": 0
+        },
+        "swords": {},
+        "using": ""
+    },
+    "838132393680175105": {
+        "cash": 1000,
+        "bank": 0,
+        "time": {
+            "day": 1642256312.4580543,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 1,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 12,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": {},
+        "using": ""
+    },
+    "159985870458322944": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": {},
+        "using": ""
+    },
+    "737103938192408637": {
+        "cash": 1000,
+        "bank": 0,
+        "time": {
+            "day": 1642255155.6352391,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 30,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 13
+        },
+        "swords": {},
+        "using": ""
+    },
+    "908103379379707974": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": {},
+        "using": ""
+    },
+    "773592958632984586": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 12,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 8
         },
         "swords": {},
         "using": ""

@@ -29,8 +29,13 @@ class Resources(commands.Cog):
         b = nextcord.Embed(
             title="After 5 hours non-stop mining. Here's what you got!", color=0xFFAA00
         )
+        cache = ""
         for x in range(random.randint(1, 5)):
             az = random.choice(ores)
+            if az == cache:
+                az = random.choice(ores)
+            else:
+                cache = az
             v = random.randint(1, 20)
             b.add_field(name=az, value=v, inline=False)
             db[str(ctx.author.id)]["materials"][az.lower()] += v
