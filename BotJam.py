@@ -11,7 +11,7 @@ from keep_alive import keep_alive
 
 bot = commands.Bot("j!", intents=nextcord.Intents().all())
 
-bot.emojis = {
+bot._emojis = {
     "stone": "931381079489806356",
     "rickroll": "931382810751664158",
     "sword": "931382894239293540",
