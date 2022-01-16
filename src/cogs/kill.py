@@ -54,6 +54,12 @@ class Kill(commands.Cog):
                             )
                             await self.finalize(db)
                             return
+                    else:
+                        await ctx.send(
+                            f"You miss {user.mention} but you can attack again."
+                        )
+                        await self.finalize(db)
+                        return
         else:
             await ctx.send(
                 f"What the actual hell? {user.name} is just a new guy! Leave him alone!"
