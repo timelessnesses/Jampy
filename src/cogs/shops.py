@@ -139,107 +139,20 @@ class BlackSmith(commands.Cog):
             return  # :)
         materials = []
         if msg.content.lower() == "yes":
-            if user[str(ctx.author.id)]["cash"] >= int(sword["cost"]):
-                user[str(ctx.author.id)]["cash"] -= int(sword["cost"])
-                for material in sword["material"]:
-                    if material == "iron":
-                        if (
-                            user[str(ctx.author.id)]["materials"]["iron"]
-                            >= sword["material"][material]
-                        ):
-                            user[str(ctx.author.id)]["materials"]["iron"] -= db[
-                                "swords"
-                            ][sword_name]["material"][material]
-                            materials.append(material)
-                        else:
-                            await ctx.send("You don't have enough iron!")
-                            return
-                    if material == "gold":
-                        if (
-                            user[str(ctx.author.id)]["materials"]["gold"]
-                            >= sword["material"][material]
-                        ):
-                            user[str(ctx.author.id)]["materials"]["gold"] -= db[
-                                "swords"
-                            ][sword_name]["material"][material]
-
-                            materials.append(material)
-                        else:
-                            await ctx.send("You don't have enough gold!")
-                            return
-                    if material == "diamond":
-                        if (
-                            user[str(ctx.author.id)]["materials"]["diamond"]
-                            >= sword["material"][material]
-                        ):
-                            user[str(ctx.author.id)]["materials"]["diamond"] -= db[
-                                "swords"
-                            ][sword_name]["material"][material]
-
-                            materials.append(material)
-                        else:
-                            await ctx.send("You don't have enough diamond!")
-                            return
-                    if material == "stone":
-                        if (
-                            user[str(ctx.author.id)]["materials"]["stone"]
-                            >= sword["material"][material]
-                        ):
-                            user[str(ctx.author.id)]["materials"]["stone"] -= db[
-                                "swords"
-                            ][sword_name]["material"][material]
-
-                            materials.append(material)
-                        else:
-                            await ctx.send("You don't have enough stone!")
-                            return
-                    if material == "wood":
-                        if (
-                            user[str(ctx.author.id)]["materials"]["wood"]
-                            >= sword["material"][material]
-                        ):
-                            user[str(ctx.author.id)]["materials"]["wood"] -= db[
-                                "swords"
-                            ][sword_name]["material"][material]
-
-                            materials.append(material)
-                        else:
-                            await ctx.send("You don't have enough wood!")
-                            return
-                    if material == "leather":
-                        if (
-                            user[str(ctx.author.id)]["materials"]["leather"]
-                            >= sword["material"][material]
-                        ):
-                            user[str(ctx.author.id)]["materials"]["leather"] -= db[
-                                "swords"
-                            ][sword_name]["material"][material]
-
-                            materials.append(material)
-                        else:
-                            await ctx.send("You don't have enough leather!")
-                            return
-                    if material == "bone":
-                        if (
-                            user[str(ctx.author.id)]["materials"]["bone"]
-                            >= sword["material"][material]
-                        ):
-                            user[str(ctx.author.id)]["materials"]["bone"] -= db[
-                                "swords"
-                            ][sword_name]["material"][material]
-
-                            materials.append(material)
-                        else:
-                            await ctx.send("You don't have enough bone!")
-                            return
-                if len(materials) == len(sword["material"]):
-                    user[str(ctx.author.id)]["swords"][sword_name] = db["swords"][
-                        sword_name
-                    ]
-                    await ctx.send("You have made a {}!".format(sword_name))
-            else:
-                await ctx.send("You don't have enough cash!")
-                return
+            for material in sword["material"]:
+                materials.append(material)
+            for material in materials:
+                if user[str(ctx.author.id)]["materials"][material] < 1:
+                    return await ctx.send("You don't have enough materials!")
+                else:
+                    user[str(ctx.author.id)]["materials"][material] -= 1
+            
+            if user[str(ctx.author.id)]["cash"] < int(sword["cost"]):
+                return await ctx.send("You don't have enough money!")
+            user[str(ctx.author.id)]["cash"] -= int(sword["cost"])
+            user[str(ctx.author.id)]["swords"].append(sword["name"])
+            await self.finalize_user(user)
+            await ctx.send("You made a " + sword["name"] + "!")
 
 
 def setup(bot):
