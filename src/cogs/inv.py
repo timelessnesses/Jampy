@@ -25,9 +25,9 @@ class Inventory(commands.Cog):
         b = nextcord.Embed(title="Your Inventory", color=0xFFAA00)
         for x in db[str(ctx.author.id)]["materials"]:
             if x == "diamond":
-                emoji = "<a:diamond:" + self.bot._emojis[x] + "> "
+                emoji = "<a:diamond:" + self.bot.__emojis[x] + "> "
             else:
-                emoji = "<:" + x + self.bot._emojis[x] + "> "
+                emoji = "<:" + x + self.bot.__emojis[x] + "> "
             b.add_field(
                 name=emoji + x,
                 value=db[str(ctx.author.id)]["materials"][x],
