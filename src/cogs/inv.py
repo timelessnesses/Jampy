@@ -8,6 +8,17 @@ from nextcord.ext import commands
 class Inventory(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.emojis = {
+    "stone": "931381079489806356",
+    "rickroll": "931382810751664158",
+    "sword": "931382894239293540",
+    "iron": "931383376210964480",
+    "diamond": "931384417702772736",
+    "gold": "931385164758655007",
+    "wood": "931385961605111838",
+    "leather": "931386657322700850",
+    "bone": "931387021073719316",
+}
 
     async def initialize(self):
         await asyncio.sleep(1)
@@ -25,9 +36,9 @@ class Inventory(commands.Cog):
         b = nextcord.Embed(title="Your Inventory", color=0xFFAA00)
         for x in db[str(ctx.author.id)]["materials"]:
             if x == "diamond":
-                emoji = "<a:diamond:" + self.bot.__emojis[x] + "> "
+                emoji = "<a:diamond:" + self.emojis[x] + "> "
             else:
-                emoji = "<:" + x + self.bot.__emojis[x] + "> "
+                emoji = "<:" + x + self.emojis[x] + "> "
             b.add_field(
                 name=emoji + x,
                 value=db[str(ctx.author.id)]["materials"][x],

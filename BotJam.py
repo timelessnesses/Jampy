@@ -11,18 +11,6 @@ from keep_alive import keep_alive
 
 bot = commands.Bot("j!", intents=nextcord.Intents().all())
 
-bot.__emojis = {
-    "stone": "931381079489806356",
-    "rickroll": "931382810751664158",
-    "sword": "931382894239293540",
-    "iron": "931383376210964480",
-    "diamond": "931384417702772736",
-    "gold": "931385164758655007",
-    "wood": "931385961605111838",
-    "leather": "931386657322700850",
-    "bone": "931387021073719316",
-}
-
 
 @bot.event
 async def on_ready():
