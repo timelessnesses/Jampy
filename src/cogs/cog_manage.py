@@ -77,13 +77,13 @@ class CogsManagement(commands.Cog):
                 await ctx.send(f"**`ERROR:`** {type(e).__name__} - {e}")
             else:
                 await ctx.send(f"**`SUCCESS`**")
-    
+
     @commands.command(hidden=True)
     @check()
-    async def emojis(self,ctx):
+    async def emojis(self, ctx):
         embed = nextcord.Embed(title="Here's the list of emojis")
         for emoji in ctx.guild.emojis:
-            embed.add_field(name=emoji.name,value=emoji.id)
+            embed.add_field(name=emoji.name, value=emoji.id)
         await ctx.send(embed=embed)
 
 

@@ -1,6 +1,7 @@
 import asyncio
 import json
 import random
+
 import nextcord
 from nextcord.ext import commands
 
@@ -57,7 +58,6 @@ class Kill(commands.Cog):
             await ctx.send(
                 f"What the actual hell? {user.name} is just a new guy! Leave him alone!"
             )
-            
 
 
 def setup(bot):
