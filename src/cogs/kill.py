@@ -48,7 +48,9 @@ class Kill(commands.Cog):
                             await self.finalize(db)
                             return
                         else:
-                            await ctx.send(f"You don't really {user.mention} but you injure them. You can attack again.")
+                            await ctx.send(
+                                f"You don't really {user.mention} but you injure them. You can attack again."
+                            )
                             await self.finalize(db)
                             return
         else:
