@@ -74,19 +74,17 @@ class BlackSmith(commands.Cog):
         )
         embed.add_field(
             name="Cost to make",
-            value=int(sword["cost"]), # dms
+            value=int(sword["cost"]),  # dms
             inline=False,
         )
-        embed.add_field(
-            name="Damage", value=sword["damage"], inline=False
-        )
-        embed.add_field(
-            name="Rareness", value=sword["rareness"], inline=False
-        )
+        embed.add_field(name="Damage", value=sword["damage"], inline=False)
+        embed.add_field(name="Rareness", value=sword["rareness"], inline=False)
         embed.add_field(
             name="Needed Material",
-            value="\n".join(sword["material"], ),
-            inline=False
+            value="\n".join(
+                sword["material"],
+            ),
+            inline=False,
         )
         require = await ctx.send(embed=embed)
         another = nextcord.Embed(title="Here's what you have.", color=0xFFAA00)
