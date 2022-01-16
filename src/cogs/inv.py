@@ -29,6 +29,25 @@ class Inventory(commands.Cog):
             )
         await ctx.send(embed=b)
         await self.finalize(db)
+    
+    @commands.command()
+    async def list_swords(self, ctx):
+        db = await self.initialize()
+        b = nextcord.Embed(title="Swords that you have", color=0xFFAA00)
+        for sword in db[str(ctx.author.id)]["swords"]:
+            b.add_field(name=sword, value=".", inline=False)
+        await ctx.send(embed=b)
+    
+    @commands.command()
+    async def use_sword(self,ctx,*,sword_name):
+        db = await self.initialize()
+        for sword in db[str(ctx.author.id)]["swords"]:
+            if sword == sword_name:
+                db[str(ctx.author.id)]["using"] = sword
+                await ctx.send(f"You are now using {sword}.")
+                await self.finalize(db)
+                return
+        await ctx.send(f"You don't have a {sword_name}.")
 
 
 def setup(bot):
