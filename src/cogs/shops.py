@@ -146,7 +146,7 @@ class BlackSmith(commands.Cog):
                     return await ctx.send("You don't have enough materials!")
                 else:
                     user[str(ctx.author.id)]["materials"][material] -= 1
-            
+
             if user[str(ctx.author.id)]["cash"] < int(sword["cost"]):
                 return await ctx.send("You don't have enough money!")
             user[str(ctx.author.id)]["cash"] -= int(sword["cost"])
