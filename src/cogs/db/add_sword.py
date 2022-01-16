@@ -28,6 +28,7 @@ db["swords"].append(
         "damage": answer[2],
         "rareness": answer[3],
         "material": b,
+        "health": 100,
     }
 )
 
