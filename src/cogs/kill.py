@@ -57,3 +57,6 @@ class Kill(commands.Cog):
             await ctx.send(
                 f"What the actual hell? {user.name} is just a new guy! Leave him alone!"
             )
+
+def setup(bot):
+    bot.add_cog(Kill(bot))
