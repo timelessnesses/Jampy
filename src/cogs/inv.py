@@ -38,7 +38,7 @@ class Inventory(commands.Cog):
             if x == "diamond":
                 emoji = "<a:diamond:" + self.emojis[x] + "> "
             else:
-                emoji = "<:" + x + self.emojis[x] + "> "
+                emoji = "<:" + x + ":" + self.emojis[x] + "> "
             b.add_field(
                 name=emoji + x,
                 value=db[str(ctx.author.id)]["materials"][x],
