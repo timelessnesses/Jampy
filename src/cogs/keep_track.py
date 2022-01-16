@@ -28,6 +28,7 @@ class DBUpdater(commands.Cog):
                 },
                 "swords": [],
                 "using": "",
+                "health": 100,
             }
             with open("src/cogs/db/db.json", "w") as fp:
                 json.dump(db, fp, indent=4)

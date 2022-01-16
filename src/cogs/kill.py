@@ -36,12 +36,17 @@ class Kill(commands.Cog):
                 return
             for sword in swords["swords"]:
                 if sword["name"] == db[str(ctx.author.id)]["using"]:
-                    if sword["health"] <= 0:
-                        await ctx.send("Your sword is broken.")
-                        return
-                    sword["health"] -= db[str(ctx.author.id)]["damage"]
-                    await ctx.send(f"You killed {user.mention} with your {sword['name']}.")
-                    return
-
+                    chance = random.randint(1, 100)
+                    if chance <= 50:
+                        db[str(user.id)]["health"] -= sword["damage"]
+                        if db[str(user.id)]["health"] <= 0:
+                            db[str(user.id)]["health"] = 0
+                            await ctx.send(f"You killed {user.mention}.")
+                            await self.finalize(db)
+                            return
+                        else:
+                            await ctx.send(f"You don't really {user.mention} but you injure them. You can attack again.")
+                            await self.finalize(db)
+                            return
         else:
             await ctx.send(f"What the actual hell? {user.name} is just a new guy! Leave him alone!")
