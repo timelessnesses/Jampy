@@ -29,7 +29,7 @@ class Inventory(commands.Cog):
             )
         await ctx.send(embed=b)
         await self.finalize(db)
-    
+
     @commands.command()
     async def list_swords(self, ctx):
         db = await self.initialize()
@@ -37,9 +37,9 @@ class Inventory(commands.Cog):
         for sword in db[str(ctx.author.id)]["swords"]:
             b.add_field(name=sword, value=".", inline=False)
         await ctx.send(embed=b)
-    
+
     @commands.command()
-    async def use_sword(self,ctx,*,sword_name):
+    async def use_sword(self, ctx, *, sword_name):
         db = await self.initialize()
         for sword in db[str(ctx.author.id)]["swords"]:
             if sword == sword_name:
