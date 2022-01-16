@@ -26,7 +26,7 @@ class DBUpdater(commands.Cog):
                     "leather": 0,
                     "bone": 0,
                 },
-                "swords": {},
+                "swords": [],
                 "using": "",
             }
             with open("src/cogs/db/db.json", "w") as fp:

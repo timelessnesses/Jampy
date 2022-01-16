@@ -58,7 +58,7 @@ class Resources(commands.Cog):
         v = random.randint(1, 20)
         db[str(ctx.author.id)]["materials"]["wood"] += v
         b.add_field(name="Wood", value=v, inline=False)
-        b.set_footer("Mr. Beast will now hunt your ass.")
+        b.set_footer(text="Mr. Beast will now hunt your ass.")
         await a.edit(embed=b)
         await self.finalize(db)
 
