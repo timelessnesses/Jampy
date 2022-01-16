@@ -1,3 +1,114 @@
 {
-    
+    "890913140278181909": {
+        "cash": 2980,
+        "bank": 0,
+        "time": {
+            "day": 1642305707.9436862,
+            "week": 1642305714.7085938,
+            "month": 1642305711.9729884,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 5,
+            "leather": 17,
+            "bone": 0
+        },
+        "swords": [
+            "wooden sword"
+        ],
+        "using": "",
+        "health": 100
+    },
+    "930754120304951316": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "908103379379707974": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "688490378264969313": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "737103938192408637": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    }
 }
