@@ -9,12 +9,12 @@ class Status(commands.Cog):
         self.bot = bot
 
     async def initialize(self):
-        with open("/src/cogs/db/db.json") as f:
+        with open("src/cogs/db/db.json") as f:
             db = json.load(f)
         return db
 
     async def finalize(self, db):
-        with open("/src/cogs/db/db.json", "w") as f:
+        with open("src/cogs/db/db.json", "w") as f:
             json.dump(db, f)
 
     @commands.command()
