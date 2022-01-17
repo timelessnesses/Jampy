@@ -67,7 +67,7 @@ class Cash(commands.Cog):
         )
         await self.finalize(cash)
 
-    @commands.command(aliases=["set"],hidden=True)
+    @commands.command(aliases=["set"], hidden=True)
     @check()
     async def setbalance(self, ctx, amount: int):
         """
