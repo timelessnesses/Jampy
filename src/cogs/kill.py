@@ -46,6 +46,7 @@ class Kill(commands.Cog):
                         if db[str(user.id)]["health"] <= 0:
                             db[str(user.id)]["health"] = 0
                             await ctx.send(f"You killed {user.mention}.")
+                            del db[str(user.id)]
                             await self.finalize(db)
                             return
                         else:
