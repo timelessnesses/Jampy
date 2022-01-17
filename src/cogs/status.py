@@ -1,7 +1,7 @@
 import json
 
 import nextcord
-from nextcprd.ext import commands
+from nextcord.ext import commands
 
 
 class Status(commands.Cog):

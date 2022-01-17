@@ -44,3 +44,6 @@ class Medication(commands.Cog):
         await ctx.send(
             f"You have paid {cost} and now have {db[str(user.id)]['money']} left."
         )
+
+def setup(bot):
+    bot.add_cog(Medication(bot))
