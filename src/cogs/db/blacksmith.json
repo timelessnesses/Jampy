@@ -9,6 +9,40 @@
                 "wood",
                 "leather"
             ]
+        },
+        {
+            "name": "bone sword",
+            "cost": 1,
+            "damage": 10,
+            "rareness": "Common",
+            "material": [
+                "bone",
+                "leather"
+            ],
+            "health": 100
+        },
+        {
+            "name": "iron sword",
+            "cost": 100,
+            "damage": 50,
+            "rareness": "Default",
+            "material": [
+                "iron",
+                "leather"
+            ],
+            "health": 100
+        },
+        {
+            "name": "diamond sword",
+            "cost": 200,
+            "damage": 80,
+            "rareness": "Default",
+            "material": [
+                "iron",
+                "diamond",
+                "leather"
+            ],
+            "health": 100
         }
     ]
 }

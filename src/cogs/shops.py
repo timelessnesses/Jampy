@@ -39,7 +39,7 @@ class BlackSmith(commands.Cog):
         for sword in db["swords"]:
             embed.add_field(name="Sword Name", value=sword["name"], inline=False)
             embed.add_field(
-                name="Cost to make", value=int(sword["cost"]) + "$", inline=False
+                name="Cost to make", value=str(sword["cost"]) + "$", inline=False
             )
             embed.add_field(name="Damage", value=sword["damage"], inline=False)
             embed.add_field(name="Rareness", value=sword["rareness"], inline=False)

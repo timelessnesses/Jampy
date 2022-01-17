@@ -13,7 +13,7 @@ answer = []
 for question in questions:
     answer.append(input(question + ":\n"))
 
-with open("src/cogs/db/blacksmith.json") as fp:
+with open("blacksmith.json") as fp:
     db = json.load(fp)
 
 b = []
@@ -32,5 +32,5 @@ db["swords"].append(
     }
 )
 
-with open("src/cogs/db/blacksmith.json", "w") as fp:
+with open("blacksmith.json", "w") as fp:
     json.dump(db, fp, indent=4)
