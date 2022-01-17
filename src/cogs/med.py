@@ -20,6 +20,9 @@ class Medication(commands.Cog):
 
     @commands.command()
     async def med(self, ctx, user: nextcord.Member = None):
+        """
+        Cured by doktor
+        """
         db = await self.initialize()
         if user is None:
             user = ctx.author

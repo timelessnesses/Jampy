@@ -32,6 +32,10 @@ class Kill(commands.Cog):
 
     @commands.command()
     async def kill(self, ctx, *, user: nextcord.User):
+        """
+        K I L L
+        self-explanatory
+        """
         db = await self.initialize()
         swords = await self.initialize_sword()
         if str(user.id) in db:

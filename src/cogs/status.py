@@ -19,6 +19,10 @@ class Status(commands.Cog):
 
     @commands.command()
     async def status(self, ctx, user: nextcord.Member = None):
+        """
+        Shows the status of the user.
+        You are fucking dying so shut the fuck up and cure yourself you retarded
+        """
         db = await self.initialize()
         if user is None:
             user = ctx.author

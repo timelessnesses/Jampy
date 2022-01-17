@@ -32,6 +32,10 @@ class Inventory(commands.Cog):
 
     @commands.command(aliases=["inv"])
     async def inventory(self, ctx):
+        """
+        I N V E N T O R Y
+        self-explanatory
+        """
         db = await self.initialize()
         b = nextcord.Embed(title="Your Inventory", color=0xFFAA00)
         for x in db[str(ctx.author.id)]["materials"]:
@@ -49,6 +53,10 @@ class Inventory(commands.Cog):
 
     @commands.command()
     async def list_swords(self, ctx):
+        """
+        List all swords
+        Dude: What sword should I use to kill peoples? 🤔
+        """
         db = await self.initialize()
         b = nextcord.Embed(title="Swords that you have", color=0xFFAA00)
         for sword in db[str(ctx.author.id)]["swords"]:
@@ -57,6 +65,9 @@ class Inventory(commands.Cog):
 
     @commands.command()
     async def use_sword(self, ctx, *, sword_name):
+        """
+        Use a sword
+        """
         db = await self.initialize()
         for sword in db[str(ctx.author.id)]["swords"]:
             if sword == sword_name:

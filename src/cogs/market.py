@@ -1,6 +1,6 @@
 import asyncio
 import json
-
+import random
 import nextcord
 from nextcord.ext import commands
 
@@ -24,7 +24,7 @@ class Selling(commands.Cog):
         db = await self.initialize()
         if db[str(ctx.author.id)]["materials"][item.lower()] >= amount:
             db[str(ctx.author.id)]["materials"][item.lower()] -= amount
-            db[str(ctx.author.id)]["money"] += amount
+            db[str(ctx.author.id)]["money"] += random.randint(1, 50) * amount
             await ctx.send(
                 embed=nextcord.Embed(
                     title="Successfully sold {} {}(s)".format(amount, item),
