@@ -20,7 +20,7 @@
         "swords": [
             "wooden sword"
         ],
-        "using": "",
+        "using": "wooden sword",
         "health": 100
     },
     "930754120304951316": {
@@ -90,6 +90,162 @@
         "health": 100
     },
     "737103938192408637": {
+        "cash": 99999999999999999999999999999999999999999979,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 25,
+            "leather": 37,
+            "bone": 0
+        },
+        "swords": [
+            "wooden sword"
+        ],
+        "using": "wooden sword",
+        "health": 95
+    },
+    "665641503376539669": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "467718535897022479": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "930212434860462212": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "838132393680175105": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "270904126974590976": {
+        "cash": 0,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 0,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "677970752242450463": {
+        "cash": 1000,
+        "bank": 0,
+        "time": {
+            "day": 0,
+            "week": 1642352206.2703063,
+            "month": 0,
+            "year": 0
+        },
+        "materials": {
+            "iron": 0,
+            "gold": 0,
+            "diamond": 0,
+            "stone": 0,
+            "wood": 0,
+            "leather": 0,
+            "bone": 0
+        },
+        "swords": [],
+        "using": "",
+        "health": 100
+    },
+    "500732774651527175": {
         "cash": 0,
         "bank": 0,
         "time": {

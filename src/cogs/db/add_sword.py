@@ -24,8 +24,8 @@ for material in answer[4].split(","):
 db["swords"].append(
     {
         "name": answer[0].lower(),
-        "cost": answer[1],
-        "damage": answer[2],
+        "cost": int(answer[1]),
+        "damage": int(answer[2]),
         "rareness": answer[3],
         "material": b,
         "health": 100,
