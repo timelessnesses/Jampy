@@ -23,11 +23,10 @@ class Resources(commands.Cog):
     @commands.command()
     async def mine(self, ctx):
         """
-        Minin' away
-I don't know what to mine
-I'll mine this anyway
-In this Minecraft day
-"""
+                Minin' away
+        I don't know what to mine
+        I'll mine this anyway
+        In this Minecraft day"""
         ores = ["Iron", "Diamond", "Gold", "Stone", "Bone"]
         db = await self.initialize()
         a = await ctx.send(embed=nextcord.Embed(title="Mining...", color=0xFFAA00))
