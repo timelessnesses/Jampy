@@ -10,12 +10,12 @@ class Medication(commands.Cog):
         self.bot = bot
 
     async def initialize(self):
-        with open("/src/cogs/db/db.json") as f:
+        with open("src/cogs/db/db.json") as f:
             db = json.load(f)
         return db
 
     async def finalize(self, db):
-        with open("/src/cogs/db/db.json", "w") as f:
+        with open("src/cogs/db/db.json", "w") as f:
             json.dump(db, f)
 
     @commands.command()
@@ -35,15 +35,16 @@ class Medication(commands.Cog):
         await ctx.send(
             f"But you need to still pay for your medication. And that is {cost}"
         )
-        if db[str(user.id)]["money"] < cost:
+        if db[str(user.id)]["cash"] < cost:
             await ctx.send(
-                f"You don't have enough money to pay for your medication. You need {cost - db[str(user.id)]['money']} more."
+                f"You don't have enough money to pay for your medication. You need {cost - db[str(user.id)]['cash']} more."
             )
             return
-        db[str(user.id)]["money"] -= cost
+        db[str(user.id)]["cash"] -= cost
         await ctx.send(
-            f"You have paid {cost} and now have {db[str(user.id)]['money']} left."
+            f"You have paid {cost} and now have {db[str(user.id)]['cash']} left."
         )
+        await self.finalize(db)
 
 
 def setup(bot):
