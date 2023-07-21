@@ -43,7 +43,6 @@ class Cash(commands.Cog):
 
     @commands.command(aliases=["bal"])
     async def balance(self, ctx, user: nextcord.Member = None):
-
         """
         Shows the balance of the user.
         If no user is specified, shows the balance of the author.
